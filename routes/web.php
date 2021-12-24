@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/',[LoginController::class,'home']);
+Route::get('/', function () {
+    return view('test');
+});
+// Route::get('/',[LoginController::class,'home']);

@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <img id="logoImg" src="../images/Capture.PNG" alt="logodtn">
+        <img id="logoImg" src="../Capture.PNG" alt="logodtn">
       </div>
       <div class="col-4">
         <h1>Tra cứu thông tin tiêm chủng </h1>
