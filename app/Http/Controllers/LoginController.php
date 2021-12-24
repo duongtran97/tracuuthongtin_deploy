@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function home()
+    public function index()
     {
         $message = null;
         $cccd = null;

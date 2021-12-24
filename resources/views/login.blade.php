@@ -34,7 +34,7 @@
 
 
       <div class="col-6">
-        <form action="/login" method="post">
+        <form action="/home" method="post">
           @csrf
           <div class="form-group">
             <label for="inputCCCD">Số căn cước công dân</label>
