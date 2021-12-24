@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="lang=" {{ str_replace('_', '-', app()->getLocale()) }}">
 
 
 <head>
@@ -19,15 +19,18 @@
 
 <body>
   <div class="container">
-  <div class="col">
-        <form class="row g-3 needs-validation" action="/logout" method="post">
-          <!-- @method('searchForCCCD') -->
-          @csrf
-          <div class="col-md-12">
-            <button class="btn btn-primary" type="submit">Đăng xuất</button>
-          </div>
-        </form>
-      </div>
+    <div class="col">
+      @if (session()->has('cccd'))
+      <form class="row g-3 needs-validation" action="/logout" method="post">
+        <!-- @method('searchForCCCD') -->
+        @csrf
+        <div class="col-md-12">
+          <button class="btn btn-primary" type="submit">Đăng xuất</button>
+        </div>
+      </form>
+      @endif
+
+    </div>
   </div>
   <div class="container">
 
@@ -39,7 +42,7 @@
         <h1>Tra cứu thông tin tiêm chủng </h1>
         <h2>Thôn Cán Khê</h2>
       </div>
-      
+
     </div>
   </div>
   @yield('content')

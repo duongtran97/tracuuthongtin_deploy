@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vaccine extends Model
 {
     use HasFactory;
+    protected $table = 'vaccine';
+    protected $primarykey = 'id';
+    public $incrementing = true;
 }

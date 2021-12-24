@@ -34,11 +34,11 @@
 
 
       <div class="col-6">
-        <form action="/home" method="post">
+        <form action="/login" method="post">
           @csrf
           <div class="form-group">
             <label for="inputCCCD">Số căn cước công dân</label>
-            <input type="text" class="form-control" name="username" id="inputCCCD" placeholder="Nhập số căn cước công dân" value="{{$cccd}}">
+            <input type="text" class="form-control" name="username" id="inputCCCD" placeholder="Nhập số căn cước công dân" value="{{$cccd}}" autofocus>
           </div>
           <div class="form-group">
             <label for="password">Mật khẩu</label>
