@@ -10,6 +10,7 @@ class LoginController extends Controller
     {
         $message = null;
         $cccd = null;
+        
         return view('login', ['message' => $message, 'cccd' => $cccd]);
     }
 }
