@@ -18,18 +18,23 @@
 </head>
 
 <body>
-  <d class="container-fluid">
-    <header class="d-flex flex-fill justify-content-center">
-      @include('includes.header')
-    </header>
-
-  </d>
   <div class="container">
+    <div class="fixed-top">
+
+      <div class="container-fluid">
+        <header class="">
+          @include('includes.header')
+        </header>
+
+      </div>
+    </div>
+  </div>
+  <div class="container ">
     <div class="col">
     </div>
     <div class="container">
 
-      <div class="row align-items-center">
+      <div class="row align-items-between">
         <div class="col">
           <h2>Tra cứu thông tin tiêm chủng </h2>
           <h3>Thôn Cán Khê</h3>
@@ -38,6 +43,7 @@
       </div>
     </div>
     @yield('content')
+    </div>
 </body>
 
 </html>
