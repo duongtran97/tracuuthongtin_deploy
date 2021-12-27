@@ -19,8 +19,8 @@
 </head>
 
 <body>
-  <d class="container">
-    <header class="row">
+  <d class="container-fluid">
+    <header class="d-flex flex-fill justify-content-center">
       @include('includes.header')
     </header>
 
