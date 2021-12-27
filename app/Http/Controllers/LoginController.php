@@ -17,7 +17,8 @@ class LoginController extends Controller
     }
     public function checkLogin(Request $request)
     {
-        // $err = array();
+        try {
+            // $err = array();
         $username = $request->input('username');
         $password = $request->input('password');
         if (is_null($username) && is_null($password)) {
@@ -54,6 +55,10 @@ class LoginController extends Controller
                 return view('login', ['message' => 'Bạn nhập sai tài khoản hoặc mật khẩu', 'cccd' => $username]);
             }
         }
+        } catch (\Throwable $th) {
+            return view('error',['message'=>" Hệ thống đang có lỗi!"]);
+        }
+        
         // return redirect('/home');
         // $user = User::where
     }

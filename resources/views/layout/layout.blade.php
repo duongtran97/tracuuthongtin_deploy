@@ -14,13 +14,17 @@
   <script src="../js/custom.js" type="text/javascript"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+ 
   <title>Tra cứu thông tin</title>
 </head>
 
 <body>
   <div class="container">
+    <header class ="row">
+    @include('header')
+    </header>
     <div class="col">
-      @if (session()->has('cccd'))
+      @if (session()->exists('username'))
       <form class="row g-3 needs-validation" action="/logout" method="post">
         <!-- @method('searchForCCCD') -->
         @csrf

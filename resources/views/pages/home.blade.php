@@ -28,7 +28,7 @@
                 @csrf
                 <div class="col-md-6">
                     <label for="validationFullname" class="form-label">Họ và tên</label>
-                    <input type="text" class="form-control" id="validationFullname" placeholder="Nhập họ và tên vào đây!" name="fullname" value="{{$fullname}}">
+                    <input type="text" class="form-control" id="validationFullname" placeholder="Nhập họ và tên vào đây!" name="fullname" value="{{$fullname}}" autofocus>
                 </div>
                 <div class="col-md-6">
                     <label for="validationCCCD" class="form-label">Số CCCD/ĐDCN</label>
@@ -106,7 +106,9 @@
                 </tbody>
             </table>
             <div class="d-flex justify-content-center">
-                {!! $person->links('vendor.pagination.bootstrap-4') !!}
+                @if($person->count() >= 15)
+                {{ $person->links('vendor.pagination.bootstrap-4') }}
+                @endif
             </div>
            
         </div>
