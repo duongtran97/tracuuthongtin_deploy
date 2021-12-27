@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('test');
-});
-// Route::get('/',[LoginController::class,'index']);
+// Route::get('/', function () {
+//     return view('test');
+// });
+Route::get('/',[LoginController::class,'index']);
 Route::get('/home',[HomeController::class,'index']);
 // Route::get('/login',[HomeController::class,'index']);
 Route::post('/login',[LoginController::class,'checkLogin']);
