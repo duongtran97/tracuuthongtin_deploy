@@ -51,6 +51,8 @@ class HomeController extends Controller
             else {
                 return redirect('/');
             }
+        }else{
+            return redirect('/');
         }
         // get all 
         // $person = Person::all();
