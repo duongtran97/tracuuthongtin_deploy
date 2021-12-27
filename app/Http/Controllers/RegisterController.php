@@ -14,7 +14,7 @@ class RegisterController extends Controller
     public function index()
     {
         $vaccine = Vaccine::all();
-        return view('register', ['message' => null, 'vaccine' => $vaccine]);
+        return view('pages.register', ['message' => null, 'vaccine' => $vaccine]);
     }
     public function insert(Request $req)
     {

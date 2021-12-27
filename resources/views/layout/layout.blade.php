@@ -14,15 +14,18 @@
   <script src="../js/custom.js" type="text/javascript"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
- 
+
   <title>Tra cứu thông tin</title>
 </head>
 
 <body>
-  <div class="container">
-    <header class ="row">
-    @include('header')
+  <d class="container">
+    <header class="row">
+      @include('includes.header')
     </header>
+
+  </d>
+  <div class="container">
     <div class="col">
       @if (session()->exists('username'))
       <form class="row g-3 needs-validation" action="/logout" method="post">

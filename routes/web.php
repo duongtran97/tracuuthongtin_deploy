@@ -26,7 +26,7 @@ Route::get('/home',[HomeController::class,'index']);
 Route::post('/login',[LoginController::class,'checkLogin']);
 // Route::post('/home',[HomeController::class,'index']);
 //Logout
-Route::post('/logout',[LogoutController::class,'logout']);
+Route::get('/logout',[LogoutController::class,'logout']);
 //them moi thong tin 
 Route::get('/register',[RegisterController::class,'index']);
 Route::post('/addinformation',[RegisterController::class,'insert']);

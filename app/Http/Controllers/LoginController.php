@@ -13,25 +13,25 @@ class LoginController extends Controller
         $message = null;
         $cccd = null;
         
-        return view('login', ['message' => $message, 'cccd' => $cccd]);
+        return view('pages.login', ['message' => $message, 'cccd' => $cccd]);
     }
     public function checkLogin(Request $request)
     {
-        try {
+        // try {
             // $err = array();
         $username = $request->input('username');
         $password = $request->input('password');
         if (is_null($username) && is_null($password)) {
             $err = 'hãy nhập tài khoản và mật khẩu!';
-            return view('login', ['message' => $err, 'cccd' => $username]);
+            return view('pages.login', ['message' => $err, 'cccd' => $username]);
         }
         if (is_null($username)) {
             $err = 'hãy nhập tài khoản!';
-            return view('login', ['message' => $err, 'cccd' => $username]);
+            return view('pages.login', ['message' => $err, 'cccd' => $username]);
         }
         if (is_null($password)) {
             $err = 'Hãy nhập mật khẩu!';
-            return view('login', ['message' => $err, 'cccd' => $username]);
+            return view('pages.login', ['message' => $err, 'cccd' => $username]);
         } else {
             //set level cho user
             // $level = User::where('username',$username)->level;
@@ -49,15 +49,16 @@ class LoginController extends Controller
                 'level' => $level
             ];
             if (Auth::attempt($login)) {
-                session()->put('inforuser',$login);
-                return redirect('home');
+                session()->put(['inforuser'=>$login,'flag' => true]);
+                return redirect('/home');
             } else {
-                return view('login', ['message' => 'Bạn nhập sai tài khoản hoặc mật khẩu', 'cccd' => $username]);
+                return view('pages.login', ['message' => 'Bạn nhập sai tài khoản hoặc mật khẩu', 'cccd' => $username]);
             }
         }
-        } catch (\Throwable $th) {
-            return view('error',['message'=>" Hệ thống đang có lỗi!"]);
-        }
+        // } catch (\Throwable $th) {
+        //     // return view('pages.error',['message'=>" Hệ thống đang có lỗi!"]);
+        //     return redirect('/');
+        // }
         
         // return redirect('/home');
         // $user = User::where

@@ -32,7 +32,7 @@ class HomeController extends Controller
                         $fullname = $n->fullname;
                     }
                     $person = Person::paginate(15);
-                    return view('home', ['person' => $person, 'cccd' => $cccd, 'flagCheck' => '', 'message' => null, 'fullname' => $fullname]);
+                    return view('pages.home', ['person' => $person, 'cccd' => $cccd, 'flagCheck' => '', 'message' => null, 'fullname' => $fullname]);
                 } else {
                     //Khong phai la admin se thuc hien lay thong tin rang buoc cua ho gia ginh
                     foreach ($note as $n) {
@@ -43,7 +43,7 @@ class HomeController extends Controller
                     }
                     $person = Person::where('note', $note)
                         ->get();
-                    return view('home', ['person' => $person, 'cccd' => $cccd, 'flagCheck' => '', 'message' => null, 'fullname' => $fullname]);
+                    return view('pages.home', ['person' => $person, 'cccd' => $cccd, 'flagCheck' => '', 'message' => null, 'fullname' => $fullname]);
                 }
             }
             //neu khong ton tai chuyen ve man hinh login 
