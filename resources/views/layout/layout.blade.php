@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="../css/app.css">
   <script src="../js/custom.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -18,32 +18,15 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="fixed-top">
 
-      <div class="container-fluid">
-        <header class="">
-          @include('includes.header')
-        </header>
-
-      </div>
-    </div>
-  </div>
+      <header class="">
+        @include('includes.header')
+      </header>
   <div class="container ">
     <div class="col">
     </div>
-    <div class="container">
-
-      <div class="row align-items-between">
-        <div class="col">
-          <h2>Tra cứu thông tin tiêm chủng </h2>
-          <h3>Thôn Cán Khê</h3>
-        </div>
-
-      </div>
-    </div>
     @yield('content')
-    </div>
+  </div>
 </body>
 
 </html>

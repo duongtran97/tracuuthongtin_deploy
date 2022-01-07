@@ -39,84 +39,92 @@
                 </div>
             </form>
             <br>
-            @if(!is_null($message))
-            <div class="message alert alert-danger">
-                {{$message}}
-            </div>
-            @endif
         </div>
-        @if(!is_null($flagCheck))
-        <div class="row align-items-start">
-            <table class="table table-dark table-hover tablecustom">
-
-                <tr>
-                    <th rowspan="2">STT</th>
-                    <th rowspan="2">Họ và tên</th>
-                    <th rowspan="2">Số CCCD/ĐDCN</th>
-                    <th rowspan="2">Ngày sinh</th>
-                    <th rowspan="2">Giới tính</th>
-                    <th rowspan="2">Số điện thoại</th>
-                    <th colspan="4">
-                        Thông tin tiêm chủng lần 1
-                    </th>
-                    <th colspan="4">
-                        Thông tin tiêm chủng lần 2
-                    </th>
-                    <th rowspan="2">Mã số BHXH</th>
-                    <th rowspan="2">Số thẻ BHYT</th>
-
-
-
-                </tr>
-
-                <tr>
-                    <th>Tên vaccine</th>
-                    <th>Ngày tiêm</th>
-                    <th>Lô vaccine</th>
-                    <th>Cơ sở tiêm</th>
-                    <th>Tên vaccine</th>
-                    <th>Ngày tiêm</th>
-                    <th>Lô vaccine</th>
-                    <th>Cơ sở tiêm</th>
-
-                </tr>
-                <tbody>
-                    @foreach ($person as $persons)
-                        <tr onclick=editInfor()>
-                            <input type="hidden" name="" id="cccd" value="{{$persons->cccd}}">
-                            <td>{{$persons->id }}</td>
-                            <td>{{$persons->fullname }}</td>
-                            <td>{{$persons->cccd }}</td>
-                            <td>{{$persons->birthday }}</td>
-                            <td>{{$persons->sexual }}</td>
-                            <td>{{$persons->phone }}</td>
-                            <td>{{$persons->tenvaccine1 }}</td>
-                            <td>{{$persons->ngaytiem }}</td>
-                            <td>{{$persons->lovaccine1 }}</td>
-                            <td>{{$persons->cosotiem }}</td>
-                            <td>{{$persons->tenvaccine2 }}</td>
-                            <td>{{$persons->ngaytiem2 }}</td>
-                            <td>{{$persons->lovaccine2 }}</td>
-                            <td>{{$persons->cosotiem2 }}</td>
-                            <td>{{$persons->masobhxh }}</td>
-                            <td>{{$persons->sothebhyt }}</td>
-                        </tr>
-
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-center">
-                @if($person->count() >= 15)
-                {{ $person->links('vendor.pagination.bootstrap-4') }}
-                @endif
+        <div class="container">
+            <div class="row">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="exampleRadios" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Thông tin mũi 1
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Thông tin mũi 2
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Thông tin mũi 3
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Thông tin mũi 4
+                    </label>
+                </div>
             </div>
-           
         </div>
-
-
-        @endif
-
     </div>
+</div>
+@if(!is_null($message))
+<div class="message alert alert-danger">
+    {{$message}}
+</div>
+@endif
+@if(!is_null($flagCheck))
+<div class="row align-items-start">
+    <table class="table table-dark table-hover tablecustom">
+
+        <tr>
+            <th>STT</th>
+            <th>Họ và tên</th>
+            <th>Số CCCD/ĐDCN</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Số điện thoại</th>
+            <th>Mã số BHXH</th>
+            <th>Số thẻ BHYT</th>
+            <th>Tên vaccine</th>
+            <th>Ngày tiêm</th>
+            <th>Lô vaccine</th>
+            <th>Cơ sở tiêm</th>
+
+        </tr>
+        <tbody>
+            @foreach ($person as $persons)
+            <tr onclick=editInfor()>
+                <input type="hidden" name="" id="cccd" value="{{$persons->cccd}}">
+                <td>{{$persons->id }}</td>
+                <td>{{$persons->fullname }}</td>
+                <td>{{$persons->cccd }}</td>
+                <td>{{$persons->birthday }}</td>
+                <td>{{$persons->sexual }}</td>
+                <td>{{$persons->phone }}</td>
+                <td>{{$persons->masobhxh }}</td>
+                <td>{{$persons->sothebhyt }}</td>
+                <td>{{$persons->tenvaccine1 }}</td>
+                <td>{{$persons->ngaytiem1 }}</td>
+                <td>{{$persons->lovaccine1 }}</td>
+                <td>{{$persons->cosotiem }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+<div class="row justify-content-center">
+    @if($person->count() >= 15)
+    {{ $person->links('vendor.pagination.bootstrap-4') }}
+    @endif
+</div>
+
+
+
+@endif
+
 </div>
 
 @endsection
