@@ -13,27 +13,27 @@
       <div class="col">
         <div class="form-row">
           <div class="form-group col-md-5">
-            <label for="inputEmail4">Họ và tên</label>
-            <input type="text" class="form-control" id="inputEmail4" placeholder="Họ và tên " name="fullname">
+            <label for="inputEmail4"  >Họ và tên</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Họ và tên " name="fullname" required>
           </div>
           <div class="form-group col-md-5">
-            <label for="inputPassword4">Số CCCD/ĐDCN</label>
-            <input type="text" class="form-control" id="inputcccd" placeholder="Số CCCD" name="cccd">
+            <label for="inputPassword4" >Số CCCD/ĐDCN</label>
+            <input type="text" class="form-control" id="inputcccd" placeholder="Số CCCD" name="cccd" required>
           </div>
         </div>
         <div class="form-group col-md-5">
-          <label for="inputdate">Ngày sinh</label>
-          <input type="date" class="form-control" id="inputdate" name="birthday">
+          <label for="inputdate" >Ngày sinh</label>
+          <input type="date" class="form-control" id="inputdate" name="birthday" required>
         </div>
         <div class="form-group col-md-5">
-          <label for="inputphone">Số điện thoại</label>
-          <input type="text" class="form-control" id="inputphone" placeholder="Số điện thoại" name="phone">
+          <label for="inputphone" >Số điện thoại</label>
+          <input type="text" class="form-control" id="inputphone" placeholder="Số điện thoại" name="phone" required>
         </div>
         <div class="form-group">
           <div class="form-group col-md-5">
             <label for="inputSex">Giới tính</label>
             <select id="inputSex" class="form-control" name="sexual">
-              <option selected>Chọn giới tính</option>
+              <option selected >Chọn giới tính</option>
               <option>Nam</option>
               <option>Nữ</option>
             </select>
@@ -60,9 +60,9 @@
         <div class="form-row">
           <h4>Thông tin tiêm chủng lần 1</h4>
           <div class="form-group col-md-4">
-            <label for="inputnamevaccine">Tên vaccine</label>
+            <label for="inputnamevaccine" >Tên vaccine</label>
             <select id="inputnamevaccine" class="form-control" name="tenvaccine1">
-              <option selected>Chọn vaccine</option>
+              <option selected >Chọn vaccine</option>
               @foreach($vaccine as $v)
               <option>{{$v->vaccine}}</option>
 
@@ -71,8 +71,8 @@
           </div>
         </div>
         <div class="form-row col-md-4">
-          <label for="inputngaytiem1">Ngày tiêm</label>
-          <input type="date" class="form-control" id="inputngaytiem1" name="ngaytiem">
+          <label for="inputngaytiem1"  >Ngày tiêm</label>
+          <input type="date" class="form-control" id="inputngaytiem1" name="ngaytiem" required>
         </div>
         <div class="form-row col-md-4">
           <label for="inputLo1">Lô vaccine</label>
@@ -98,8 +98,8 @@
           </div>
         </div>
         <div class="form-row col-md-4">
-          <label for="inputngaytiem2">Ngày tiêm</label>
-          <input type="date" class="form-control" id="inputngaytiem2" name="ngaytiem2">
+          <label for="inputngaytiem2" >Ngày tiêm</label>
+          <input type="date" class="form-control" id="inputngaytiem2" name="ngaytiem2" required>
         </div>
         <div class="form-row col-md-4">
           <label for="inputLo2">Lô vaccine</label>
@@ -116,10 +116,10 @@
 
 
   <br>
-  <button type="submit" class="btn btn-primary">Đăng ký</button>
+  <button type="submit" class="btn btn-primary" onclick='alert ("Đăng ký thành công")'>Đăng ký</button>
 
 </form>
 <a href="/">
-  <button class="btn btn-primary">Đăng nhập bằng tài khoản khác</button>
+  <button class="btn btn-primary" style="margin: 7px; ">Đăng nhập bằng tài khoản khác</button>
 </a>
 @endsection

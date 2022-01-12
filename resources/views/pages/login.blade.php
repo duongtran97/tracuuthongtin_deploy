@@ -21,8 +21,8 @@
         <img id="logoImg" src="../images/Capture.png" alt="logodtn">
       </div>
       <div class="col-4">
-        <h1>Tra cứu thông tin tiêm chủng </h1>
-        <h2>Đăng nhập</h2>
+        <h1 style="margin: 15px; ">Tra cứu thông tin tiêm chủng </h1>
+        <h2 style="margin: 15px; ">Thôn Cán Khê</h2>
       </div>
       <br>
       @if(!is_null($message))
@@ -37,18 +37,18 @@
         <form action="/login" method="post">
           @csrf
           <div class="form-group">
-            <label for="inputCCCD">Số căn cước công dân</label>
+            <label for="inputCCCD" style="margin: 5px; ">Số căn cước công dân</label>
             <input type="text" class="form-control" name="username" id="inputCCCD" placeholder="Nhập số căn cước công dân" value="{{$cccd}}" autofocus>
           </div>
           <div class="form-group">
-            <label for="password">Mật khẩu</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <label for="password" style="margin: 5px; ">Mật khẩu</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Số căn cước công dân vừa nhập">
           </div>
           <br>
 
-          <button type="submit" class="btn btn-primary">Đăng nhập</button>
+          <button type="submit" class="btn btn-primary" style="margin: 5px; " >Đăng nhập</button>
         </form>
-        <a href="/register" class="dangky"><button class="btn btn-primary">Đăng ký</button></a>
+        <a href="/register" class="dangky"><button class="btn btn-primary" style="margin: 5px; " >Đăng ký</button></a>
       </div>
     </div>
 

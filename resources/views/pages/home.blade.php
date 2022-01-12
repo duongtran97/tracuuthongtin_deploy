@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('content')
 <!-- Vùng nhập thông tin tìm kiếm -->
-<div class="container">
+<div class="container" >
     <!-- Căn giữa  -->
     <!-- lựa chọn tìm kiếm, theo tên hoặc CCCD -->
     <div class="row justify-content-center">
@@ -11,7 +11,7 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="cccdRadioCheck" checked>
                 <label class="form-check-label" for="cccdRadioCheck">
-                    Tìm kiếm theo CCCD
+                    CCCD/ĐDCN
                 </label>
             </div> <!-- Nhập thông tin tìm kiếm  -->
             <div class="form-check">
@@ -27,15 +27,15 @@
                 <!-- @method('searchForCCCD') -->
                 @csrf
                 <div class="col-md-6">
-                    <label for="validationFullname" class="form-label">Họ và tên</label>
+                    <label for="validationFullname" class="form-label" required >Họ và tên</label>
                     <input type="text" class="form-control" id="validationFullname" placeholder="Nhập họ và tên vào đây!" name="fullname" value="{{$fullname}}" autofocus>
                 </div>
                 <div class="col-md-6">
-                    <label for="validationCCCD" class="form-label">Số CCCD/ĐDCN</label>
+                    <label for="validationCCCD" class="form-label" required >Số CCCD/ĐDCN</label>
                     <input type="text" class="form-control" name="cccd" id="validationCCCD" placeholder="Nhập số CCCD vào đây!" value="{{$cccd}}">
                 </div>
                 <div class="col-md-12">
-                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                    <button class="btn btn-primary" type="submit" style="margin: 15px">Tìm kiếm</button>
                 </div>
             </form>
             <br>
@@ -46,40 +46,41 @@
             @endif
         </div>
         @if(!is_null($flagCheck))
-        <div class="row align-items-start">
-            <table class="table table-dark table-hover tablecustom">
+        <div class="row align-items-start" >
+            <table class="table table-dark table-hover tablecustom" style="width:100px; border-collapse:collapse; text-align: center" border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th rowspan="2">STT</th>
+                        <th rowspan="2">Họ và tên</th>
+                        <th rowspan="2">Số CCCD/ĐDCN</th>
+                        <th rowspan="2">Ngày sinh</th>
+                        <th rowspan="2">Giới tính</th>
+                        <th rowspan="2">Số điện thoại</th>
+                        <th colspan="4">
+                            Thông tin tiêm chủng lần 1
+                        </th>
+                        <th colspan="4">
+                            Thông tin tiêm chủng lần 2
+                        </th>
+                        <th rowspan="2">Mã số BHXH</th>
+                        <th rowspan="2">Số thẻ BHYT</th>
 
-                <tr>
-                    <th rowspan="2">STT</th>
-                    <th rowspan="2">Họ và tên</th>
-                    <th rowspan="2">Số CCCD/ĐDCN</th>
-                    <th rowspan="2">Ngày sinh</th>
-                    <th rowspan="2">Giới tính</th>
-                    <th rowspan="2">Số điện thoại</th>
-                    <th colspan="4">
-                        Thông tin tiêm chủng lần 1
-                    </th>
-                    <th colspan="4">
-                        Thông tin tiêm chủng lần 2
-                    </th>
-                    <th rowspan="2">Mã số BHXH</th>
-                    <th rowspan="2">Số thẻ BHYT</th>
 
 
+                    </tr>
 
-                </tr>
+                    <tr>
+                        <th>Tên vaccine</th>
+                        <th>Ngày tiêm</th>
+                        <th>Lô vaccine</th>
+                        <th>Cơ sở tiêm</th>
+                        <th>Tên vaccine</th>
+                        <th>Ngày tiêm</th>
+                        <th>Lô vaccine</th>
+                        <th>Cơ sở tiêm</th>
 
-                <tr>
-                    <th>Tên vaccine</th>
-                    <th>Ngày tiêm</th>
-                    <th>Lô vaccine</th>
-                    <th>Cơ sở tiêm</th>
-                    <th>Tên vaccine</th>
-                    <th>Ngày tiêm</th>
-                    <th>Lô vaccine</th>
-                    <th>Cơ sở tiêm</th>
-
-                </tr>
+                    </tr>
+                </thead>
                 <tbody>
                     @foreach ($person as $persons)
                         <tr onclick=editInfor()>

@@ -19,7 +19,7 @@
 
 <body>
   <div class="container">
-    <div class="fixed-top">
+    <div>     <!-- div class="fixed-top" -->
 
       <div class="container-fluid">
         <header class="">
