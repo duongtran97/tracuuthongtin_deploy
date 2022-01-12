@@ -29,4 +29,8 @@
             @endif
         </ul>
     </div>
+    <div>
+        Tra cứu thông tin tiêm chủng <br>
+        Thông Cán Khê
+    </div>
 </nav>
