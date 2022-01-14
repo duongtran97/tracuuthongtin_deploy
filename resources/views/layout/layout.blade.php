@@ -19,14 +19,10 @@
 
 <body>
 
-      <header class="">
         @include('includes.header')
-      </header>
-  <div class="container ">
-    <div class="col">
-    </div>
-    @yield('content')
-  </div>
+        <main role="main" class="container">
+          @yield('content')
+        </main>
 </body>
 
 </html>

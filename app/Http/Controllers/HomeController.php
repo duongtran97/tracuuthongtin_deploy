@@ -11,6 +11,8 @@ class HomeController extends Controller
     public function index(Request $req)
     {
         $session = $req->session();
+        $numberRecordOfPage = 5;
+        $flagPaging = true;
         // $cccd = null;
         //lấy ra 15 bản ghi đầu tiên
         // $level = '1';
@@ -31,8 +33,24 @@ class HomeController extends Controller
                         //Lay full name de hien thi len man hinh 
                         $fullname = $n->fullname;
                     }
-                    $person = Person::paginate(15);
-                    return view('pages.home', ['person' => $person, 'cccd' => $cccd, 'flagCheck' => '', 'message' => null, 'fullname' => $fullname]);
+                    //kiểm tra tổng số record
+                    $total = Person::all()->count();
+                    if ($total < $numberRecordOfPage) {
+                        $flagPaging = false;
+                    }
+                    $person = Person::paginate($numberRecordOfPage);
+                    return view(
+                        'pages.home',
+                        [
+                            'person' => $person,
+                            'cccd' => $cccd,
+                            'flagCheck' => '',
+                            'message' => null,
+                            'fullname' => $fullname,
+                            'paging' => $numberRecordOfPage,
+                            'flagPaging' => $flagPaging
+                        ]
+                    );
                 } else {
                     //Khong phai la admin se thuc hien lay thong tin rang buoc cua ho gia ginh
                     foreach ($note as $n) {
@@ -51,7 +69,7 @@ class HomeController extends Controller
             else {
                 return redirect('/');
             }
-        }else{
+        } else {
             return redirect('/');
         }
         // get all 

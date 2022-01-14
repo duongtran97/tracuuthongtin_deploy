@@ -1,6 +1,4 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">
         <img src="../images/Capture.PNG" width="50" height="50" alt="">
     </a>
@@ -12,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                <a class="nav-link" href="/home">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Registry</a>
@@ -29,8 +27,11 @@
             @endif
         </ul>
     </div>
-    <div>
-        Tra cứu thông tin tiêm chủng <br>
-        Thông Cán Khê
-    </div>
+    <span class="navbar-text" style="color: white;">
+        <div class="row justify-content-center">
+            Tra cứu thông tin tiêm chủng
+            <br>
+            Thôn Cán Khê
+        </div>
+    </span>
 </nav>
